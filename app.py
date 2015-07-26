@@ -6,10 +6,25 @@ line and configuration files.
 
 # http://www.giantflyingsaucer.com/blog/?p=4822
 # pip install oslo.config
+""" configuration example  - app.conf
+[simple]
+enable = True
+[morestuff]
+# StrOpt
+message = Hello World
+# ListOpt
+usernames = tungnt, nttung, ungntt
+# DictOpt
+usermetadata = {'Joe': 'Manager', 'Jessica': 'CEO', 'Peter': 'Security Guard'}
+# IntOpt
+payday = 20
+# FloatOpt
+pi = 3.14
+"""
 
 from oslo_config import cfg
 
-# define section in configuration file
+# define section in configuration files
 opt_simple_group = cfg.OptGroup(name='simple',
                                 title='A simple example')
 opt_morestuff_group = cfg.OptGroup(name='morestuff',
